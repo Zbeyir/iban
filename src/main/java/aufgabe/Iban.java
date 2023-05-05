@@ -116,4 +116,5 @@ Es sollen also keine entsprechenden Libraries verwendet werden.
 Es ist ausreichend, wenn die Prüfziffern der IBAN berechnet werden,
 die Berechnung der Prüfziffern der Kontonummern selbst, kann dagegen vernachlässigt werden.
 Das Programm kann sich auf die Kommandozeile beschränken, eine grafische Benutzeroberfläche ist nicht erforderlich.
+
  */
