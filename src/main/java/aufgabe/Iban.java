@@ -78,7 +78,7 @@ public class Iban {
 
             String iban = generateRandomIban();
 
-            
+
             if (isValidIban(iban)) {
                 System.out.println("Valid");
 
@@ -91,3 +91,29 @@ public class Iban {
 
 
 }
+
+
+/*
+
+Aufgabenstellung Programmierung
+Für die Erzeugung von Testdaten soll ein einfacher IBAN-Generator in Python entwickelt werden.
+
+Es soll hierbei lediglich ein Prototyp entwickelt werden, so dass zunächst eine Beschränkung auf deutsche IBANs ausreichend ist.
+
+Das Programm soll aus einem Hauptprogramm und mindestens einer Klasse für die Erzeugung und Überprüfung von IBANs beinhalten.
+Es soll dabei eine Methode zur Erzeugung von zufälligen IBANs erstellt werden.
+Die Anzahl der zu erzeugenden IBANs soll beim Aufruf der Methode frei wählbar sein.
+
+Eine weitere Methode soll eine IBAN als Übergabeparameter entgegennehmen und deren Validität prüfen.
+Das entsprechende Ergebnis soll zurückgegeben werden.
+Das Hauptprogramm soll lediglich die beiden o.g. Methoden aufrufen
+und beispielhaft 100 gültige IBANs erzeugen sowie diese anschließend auf Validität prüfen.
+Anmerkungen
+
+
+Die Generierung und Prüfung der IBANs soll selbst implementiert werden.
+Es sollen also keine entsprechenden Libraries verwendet werden.
+Es ist ausreichend, wenn die Prüfziffern der IBAN berechnet werden,
+die Berechnung der Prüfziffern der Kontonummern selbst, kann dagegen vernachlässigt werden.
+Das Programm kann sich auf die Kommandozeile beschränken, eine grafische Benutzeroberfläche ist nicht erforderlich.
+ */
