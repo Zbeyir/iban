@@ -8,13 +8,17 @@ public class Test {
 
         int numIbans = 100;
 
+
+
         for (int i = 0; i < numIbans; i++) {
             String iban = IbanGenerator.generateRandomIban();
 
             if (IbanValidator.isValidIban(iban)) {
-                System.out.println("Valid");
+                System.out.println("Valid ---> " + iban);
+
+
             } else {
-                System.err.println("Invalid");
+                System.err.println("Invalid ---> " + iban);
 
             }
         }
