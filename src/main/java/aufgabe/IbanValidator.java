@@ -8,19 +8,15 @@ public class IbanValidator {
             return false;
         }
 
-        // Die IBAN beginnt immer mit dem Länderkennzeichen. Für Deutschland ist dies „DE“
         if (!iban.substring(0, 2).equals("DE")) {
             return false;
         }
 
-        // 5. ve 6. karakterler kontrol rakamlarıdır ve harf içeremezler
         char fifthChar = iban.charAt(4);
         char sixthChar = iban.charAt(5);
         if (!Character.isDigit(fifthChar) || !Character.isDigit(sixthChar)) {
             return false;
         }
-
-        //String countryCode = iban.substring(0, 2);
 
         String checkDigits = iban.substring(2, 4);
 
@@ -28,7 +24,7 @@ public class IbanValidator {
 
         String accountNumber = iban.substring(12);
 
-        String rearrangedIban = bankCode + accountNumber  + "1314" + checkDigits;
+        String rearrangedIban = bankCode + accountNumber + "1314" + checkDigits;
 
         int checksum = 0;
         for (int i = 0; i < rearrangedIban.length(); i++) {
@@ -44,7 +40,7 @@ public class IbanValidator {
             checksum = (checksum * 10 + n) % 97;
         }
 
-        return (98-checksum)  == Integer.parseInt(checkDigits);
+        return (98 - checksum) == Integer.parseInt(checkDigits);
     }
 }
 
