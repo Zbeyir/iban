@@ -1,5 +1,7 @@
 package aufgabe;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class IbanGenerator {
@@ -12,27 +14,30 @@ public class IbanGenerator {
 
     private static final Random random = new Random();
 
-    public static String generateRandomIban() {
-        StringBuilder builder = new StringBuilder(IBAN_LENGTH);
+    public static List<String> generateRandomIban(int count) {
 
-        builder.append(Länderkennzeichen);
+        List<String> ibans = new ArrayList<>();
 
+        for (int j = 0; j < count; j++) {
 
-        for (int i = 0; i < Prüf_Zahl; i++) {
-            builder.append(random.nextInt(10));
+            StringBuilder builder = new StringBuilder(IBAN_LENGTH);
 
+            builder.append(Länderkennzeichen);
+
+            for (int i = 0; i < Prüf_Zahl; i++) {
+                builder.append(random.nextInt(10));
+            }
+
+            for (int i = 0; i < Bankleitzahl; i++) {
+                builder.append(random.nextInt(10));
+            }
+
+            for (int i = 0; i < Kontonummer; i++) {
+                builder.append(random.nextInt(10));
+            }
+
+            ibans.add(builder.toString());
         }
-
-
-        for (int i = 0; i < Bankleitzahl; i++) {
-            builder.append(random.nextInt(10));
-        }
-
-
-        for (int i = 0; i < Kontonummer; i++) {
-            builder.append(random.nextInt(10));
-        }
-
-        return builder.toString();
+        return ibans;
     }
 }
