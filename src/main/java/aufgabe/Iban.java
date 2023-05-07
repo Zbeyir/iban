@@ -93,6 +93,7 @@ public class Iban {
 }
 
 
+
 /*
 
 Aufgabenstellung Programmierung
@@ -116,5 +117,18 @@ Es sollen also keine entsprechenden Libraries verwendet werden.
 Es ist ausreichend, wenn die Prüfziffern der IBAN berechnet werden,
 die Berechnung der Prüfziffern der Kontonummern selbst, kann dagegen vernachlässigt werden.
 Das Programm kann sich auf die Kommandozeile beschränken, eine grafische Benutzeroberfläche ist nicht erforderlich.
+
+
+
+
+     //DE44 35070024 0388249600
+        String ben = "DE44350700240388249600";
+
+        if (IbanValidator.isValidIban(ben)) {
+            System.out.println("Valid ---> " + ben);
+
+        } else {
+            System.err.println("Invalid ---> " + ben);
+        }
 
  */

@@ -1,5 +1,7 @@
 package aufgabe;
 
+import java.math.BigInteger;
+
 public class IbanValidator {
 
     public static boolean isValidIban(String iban) {
@@ -26,23 +28,27 @@ public class IbanValidator {
 
         String rearrangedIban = bankCode + accountNumber + "1314" + checkDigits;
 
-        int checksum = 0;
-        for (int i = 0; i < rearrangedIban.length(); i++) {
-            char c = rearrangedIban.charAt(i);
-            int n;
-            if (c >= '0' && c <= '9') {
-                n = c - '0';
-            } else if (c >= 'A' && c <= 'Z') {
-                n = c - 'A' + 10;
-            } else {
-                return false;
-            }
-            checksum = (checksum * 10 + n) % 97;
-        }
 
-        return (98 - checksum) == Integer.parseInt(checkDigits);
+        // BigInteger nesnesine çevir
+        BigInteger number = new BigInteger(rearrangedIban);
+
+        // 97 ile bölümün kalanını hesapla
+        BigInteger remainder = number.remainder(BigInteger.valueOf(97));
+
+       // System.out.println("remainder = " + remainder);
+
+
+        if  ( remainder.equals(BigInteger.valueOf(1)) ) {
+            return true;
+        }
+        return false;
     }
+
 }
+
+
+
+
 
 /*
 https://gocardless.com/de/handbuch/artikel/iban-pruefziffer-berechnen-so-gehts/

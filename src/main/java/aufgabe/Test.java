@@ -8,7 +8,6 @@ public class Test {
         int numIbans = 100;
 
 
-
         for (int i = 0; i < numIbans; i++) {
             String iban = IbanGenerator.generateRandomIban();
 
