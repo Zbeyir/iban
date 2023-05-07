@@ -15,13 +15,13 @@ public class IbanValidator {
         }
 
 
-        String checkDigits = iban.substring(2, 4);
+        String Prüf_Zahl = iban.substring(2, 4);
 
-        String bankCode = iban.substring(4, 12);
+        String Bankleitzahl = iban.substring(4, 12);
 
-        String accountNumber = iban.substring(12);
+        String Kontonummer = iban.substring(12);
 
-        String rearrangedIban = bankCode + accountNumber + "1314" + checkDigits;
+        String rearrangedIban = Bankleitzahl + Kontonummer + "1314" + Prüf_Zahl;
 
 
         BigInteger number = new BigInteger(rearrangedIban);
